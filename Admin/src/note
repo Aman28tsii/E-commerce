@@ -1,0 +1,96 @@
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+    const [products, setProducts] = useState([]);
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState('');
+    const [description, setDescription] = useState('');
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = async () => {
+        const response = await axios.get('http://localhost:5000/api/products');
+        setProducts(response.data);
+    };
+
+    const handleAddProduct = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('description', description);
+        if (image) {
+            formData.append('image', image);
+        }
+
+        await axios.post('http://localhost:5000/api/products', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        fetchProducts();
+        resetForm();
+    };
+
+    const handleDeleteProduct = async (id) => {
+        await axios.delete(`http://localhost:5000/api/products/${id}`);
+        fetchProducts();
+    };
+
+    const resetForm = () => {
+        setName('');
+        setPrice('');
+        setDescription('');
+        setImage(null);
+    };
+
+    return (
+        <div>
+            <h1>Admin Dashboard</h1>
+            <h2>Products</h2>
+            <ul>
+                {products.map(product => (
+                    <li key={product.id}>
+                        {product.name} - ${product.price}
+                        {product.image && <img src={`http://localhost:5000/${product.image}`} alt={product.name} width="100" />}
+                        <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+
+            <h2>Add New Product</h2>
+            <form onSubmit={handleAddProduct}>
+                <input
+                    type="text"
+                    value={name}
+                    placeholder="Product Name"
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                    type="number"
+                    value={price}
+                    placeholder="Product Price"
+                    onChange={(e) => setPrice(e.target.value)}
+                />
+                <textarea
+                    value={description}
+                    placeholder="Product Description"
+                    onChange={(e) => setDescription(e.target.value)}
+                />
+                <input
+                    type="file"
+                    accept="image/*" // To only allow image uploads
+                    onChange={(e) => setImage(e.target.files[0])}
+                />
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    );
+}
+
+export default App;

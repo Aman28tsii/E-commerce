@@ -1,0 +1,98 @@
+.MB-h2{
+    position: relative;
+    top:0 px;
+}
+.form-MB {
+  margin-bottom: 280px;
+  position: relative;
+  top:10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-MB {
+    width:30%;
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #c5b2b2;
+    border-radius: 4px;
+  }
+  
+  .btn-MB {
+    width:30%;
+    padding: 8px;
+    margin: 10px 0;
+    border: none;
+    background-color: #6b46c1;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-MB:hover {
+    background-color: #724bb7;
+  }
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    top: 300px;
+    left: 450px;
+  }
+  
+  .titleContainer {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+ 
+
+  }
+  
+  .inputBox {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .errorLabel {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .inputButton {
+    width: 150px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .inputButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .inputButton:active {
+    background-color: #004088;
+  }

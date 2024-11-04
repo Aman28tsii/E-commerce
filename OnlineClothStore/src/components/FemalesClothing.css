@@ -1,0 +1,11 @@
+/* Assuming this is in your CSS file (e.g., styles.css) */
+.product-grid {
+    display: flex;               /* Enable flexbox layout */
+    flex-wrap: wrap;           /* Allow items to wrap into the next line if they overflow */
+    gap: 16px;                 /* Optional: Add space between items */
+}
+
+/* Optional: style for the ProductDetail to control its size */
+.product-detail {
+    flex: 1 1 200px;            /* Grow and shrink while maintaining a base width of 200px */
+}

@@ -1,0 +1,61 @@
+
+/* Parent Container */
+.parent-container {
+     width: 100%;  /* Allow the parent to take full width */
+  
+}
+
+/* Individual Product Detail Box */
+.product-detail {
+    width: 100%;
+    background: #cc7b38;           /* White background for individual product */
+    border-radius: 8px;            /* Rounded corners for a softer look */
+    padding: 20px;                 /* Inner padding for content spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth effect */
+    
+    /* Flex properties */
+    flex: 1 1 calc(30% - 20px);    /* Responsive flex item with 3 items per row while accounting for margins */
+    margin: 10px;                  /* Margin around each product item */
+    text-align: center;            /* Center align text within product box */
+
+    /* The maximum width is limited to ensure uniformity across rows */
+    max-width: calc(30% - 20px);   /* Prevents items from exceeding this width */
+}
+
+/* Image within the Product Detail */
+.product-detail img {
+    max-width: 100%;               /* Ensure images scale down responsively */
+    height: auto;                  /* Maintain the aspect ratio of images */
+    border-radius: 5px;           /* Optional: rounded corners for images */
+    margin-bottom: 15px;           /* Space below each image */
+}
+
+/* Heading (Title) for the Product */
+.product-detail h2 {
+    font-size: 24px;               /* Font size for product title */
+    color: #333;                   /* Dark grey color for title */
+    margin: 10px 0;                /* Top and bottom spacing */
+}
+
+/* Price Text for the Product */
+.product-detail p {
+    font-size: 20px;               /* Font size for price text */
+    color: #28a745;                /* Green color for price indication */
+    margin: 10px 0;                /* Top and bottom spacing */
+}
+
+/* Button for the Product Action */
+.product-detail button {
+    background-color: #007bff;     /* Primary button color */
+    color: white;                  /* Text color of the button */
+    border: none;                  /* No border for a flat look */
+    padding: 10px 20px;            /* Padding for the button for size */
+    border-radius: 5px;            /* Rounded corners for the button */
+    cursor: pointer;                /* Changes cursor to pointer on hover */
+    transition: background 0.3s;   /* Smooth transition for background color */
+}
+
+/* Button Hover State */
+.product-detail button:hover {
+    background-color: #0056b3;     /* Darker shade for hover effect */
+}

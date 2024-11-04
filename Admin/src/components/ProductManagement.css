@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.product-management {
+    max-width: 1200px; /* Restrict the maximum width of the container */
+    margin: auto; /* Center the container on the page */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px; /* Add some spacing above categories */
+}
+
+.category-container {
+    margin: 20px 0; /* Space between categories */
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px;       /* Space between product cards */
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 0 150px; /* Allow cards to grow and shrink, with a base width */
+    text-align: center;
+    transition: transform 0.3s; /* Smooth transformation on hover */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+img {
+    border-radius: 5px;
+    margin-top: 10px; /* Give space above the image */
+}
+
+button {
+    background-color: #FF5733; /* A vibrant color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c70039; /* Darker shade on hover */
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #FF5733; /* Highlight the input on focus */
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.5em; /* Smaller headings on small screens */
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .category-container {
+        margin: 20px 0;  /* Space between categories */
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .product-card {
+        margin: 10px 0; /* Space between product cards */
+    }
+}
